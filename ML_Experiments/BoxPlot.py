@@ -1,0 +1,28 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+df = pd.read_csv("EnterpriseSurvey.csv")
+df.columns = df.columns.str.strip()
+numeric_cols = ['year', 'value']
+df['value'] = pd.to_numeric(df['value'], errors='coerce')
+df.dropna(subset=['value'], inplace=True)
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=df[numeric_cols])
+plt.title("Box plots of Survey numeric columns")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+plt.figure(figsize=(8, 6))
+corr = df[numeric_cols].corr()
+sns.heatmap(corr, annot=True, cmap="coolwarm", fmt=".2f")
+plt.title("Correlation heatmap of Survey numeric columns")
+plt.tight_layout()
+plt.show()
+plt.figure(figsize=(8, 6))
+means = df[numeric_cols].mean()
+means.plot(kind='bar')
+plt.title("Mean of Survey numeric columns")
+plt.ylabel("Mean value")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
