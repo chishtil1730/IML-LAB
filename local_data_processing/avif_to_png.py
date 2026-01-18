@@ -13,4 +13,4 @@ def avif_to_png(avif_path, output_path=None):
     print(f"Converted: {output_path}")
 
 # Example usage
-avif_to_png("../other/lock_screen3.avif")
+avif_to_png("lock_screen3.avif")
