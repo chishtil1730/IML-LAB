@@ -3,7 +3,7 @@
 > **Software Chosen:** Notion
 >
 > **Author:** Shaik Chishti
-> **Context:** DBMS Hand-in Assignment
+> **Title:** DBMS Hand-in Assignment
 > **Sources:** Official Notion Developer & Help Documentation + Personal Analysis Notes
 
 ---
@@ -244,3 +244,6 @@ This design allows Notion databases to scale while remaining flexible and extens
 ---
 
 *This document consolidates official documentation with personal system-level analysis to describe how Notion internally models its database architecture.*
+
+
+**_!This document has the text extracted from my hand notes_**
