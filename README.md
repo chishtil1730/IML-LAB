@@ -6,10 +6,15 @@
     python codes.
 
 ### What to expect
-- Machine Learning programs in python's libraries.
+- Machine Learning programs in python's libraries
 - Simple yet useful codes to help localize simple tasks
 
 ### What to expect from other python codes:
-- Programs to convert files.
+- Programs to convert files
 - Digital image processing
 - Visualising using matplotlib
+
+### What to find in notion_docs
+- Explains notion's data base
+- ER diagrams & Relational models
+- References & links
