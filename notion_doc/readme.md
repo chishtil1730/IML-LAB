@@ -3,7 +3,7 @@
 > **Software Chosen:** Notion
 >
 > **Author:** Shaik Chishti
-> **Title:** DBMS Hand-in Assignment
+> **Title:** DBMS Hand-in Assignment<br>
 > **Sources:** Official Notion Developer & Help Documentation + Personal Analysis Notes
 
 ---
