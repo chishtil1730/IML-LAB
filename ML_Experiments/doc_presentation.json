@@ -1,6 +1,6 @@
 {
   "aim" : " Exp name",
-  "Implementation" : ["Code with a dedicated panel"],
+  "Implementation" : ["Code with a dedicated panel(code given & code for algo separately"],
   "Outcome/Results" : ["F1-score","precision","Recall","Confusion","ROC curve","Accuracy","Error"],
   "Visualization" : ["input&output parameters","Results{\"F1-score\",\"precision\",\"Recall\",\"Confusion\",\"ROC curve\",\"Accuracy\",\"Error\"}","plots{Box,Radar,Raincloud Plot,Hexbin Plot"],
   "Conclusion" : ["summary and conclusion"],

@@ -22,7 +22,7 @@ from sklearn.metrics import (
     auc
 )
 
-STUDENT_TAG = "24BCA7027 SHAIK BARAKH CHISHTI"
+STUDENT_NAME = "24BCA7027 SHAIK BARAKH CHISHTI"
 
 # -------------------------------
 # 1. Load Dataset
@@ -93,19 +93,17 @@ print("\nConfusion Matrix:\n", cm)
 # 1️⃣ Box Plot
 plt.figure(figsize=(12, 6))
 df.drop("Outcome", axis=1).boxplot()
-plt.title("Box Plot of Input Features")
+plt.title(f"Box Plot of Input Features — {STUDENT_NAME}")
 plt.xticks(rotation=45)
 plt.grid(True)
-plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
 # 2️⃣ Violin Plot
 plt.figure(figsize=(7, 5))
 sns.violinplot(x="Outcome", y="BMI", data=df, inner="quartile")
-plt.title("Violin Plot: BMI vs Outcome")
+plt.title(f"Violin Plot: BMI vs Outcome — {STUDENT_NAME}")
 plt.xlabel("Outcome")
 plt.ylabel("BMI")
-plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
 # 3️⃣ Hexbin Plot
@@ -114,8 +112,7 @@ plt.hexbin(df["Glucose"], df["BMI"], gridsize=30, cmap="Blues")
 plt.colorbar(label="Density")
 plt.xlabel("Glucose")
 plt.ylabel("BMI")
-plt.title("Hexbin Plot: Glucose vs BMI")
-plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
+plt.title(f"Hexbin Plot: Glucose vs BMI — {STUDENT_NAME}")
 plt.show()
 
 # 4️⃣ Raincloud Plot
@@ -123,8 +120,7 @@ plt.figure(figsize=(7, 5))
 sns.violinplot(x="Outcome", y="Glucose", data=df, inner=None, color="lightgray")
 sns.boxplot(x="Outcome", y="Glucose", data=df, width=0.2)
 sns.stripplot(x="Outcome", y="Glucose", data=df, color="black", alpha=0.4)
-plt.title("Raincloud Plot: Glucose vs Outcome")
-plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
+plt.title(f"Raincloud Plot: Glucose vs Outcome — {STUDENT_NAME}")
 plt.show()
 
 # 5️⃣ Confusion Matrix
@@ -132,8 +128,7 @@ plt.figure(figsize=(5, 4))
 sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
-plt.title("Confusion Matrix")
-plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
+plt.title(f"Confusion Matrix — {STUDENT_NAME}")
 plt.show()
 
 # 6️⃣ ROC Curve
@@ -145,10 +140,9 @@ plt.plot(fpr, tpr, label=f"AUC = {roc_auc:.2f}")
 plt.plot([0, 1], [0, 1], linestyle="--")
 plt.xlabel("False Positive Rate")
 plt.ylabel("True Positive Rate")
-plt.title("ROC Curve")
+plt.title(f"ROC Curve — {STUDENT_NAME}")
 plt.legend()
 plt.grid(True)
-plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
 # 7️⃣ Radar Plot
@@ -164,11 +158,10 @@ ax = plt.subplot(111, polar=True)
 ax.plot(angles, values)
 ax.fill(angles, values, alpha=0.25)
 ax.set_thetagrids(np.degrees(angles[:-1]), labels)
-plt.title("Model Performance Radar Plot")
-plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
+plt.title(f"Model Performance Radar Plot — {STUDENT_NAME}")
 plt.show()
 
-# 8️⃣ Bar Graph (Performance Metrics) ✅ NEW
+# 8️⃣ Bar Graph
 metrics = ["Accuracy", "Precision", "Recall", "F1-score"]
 scores = [accuracy, precision, recall, f1]
 
@@ -176,14 +169,15 @@ plt.figure(figsize=(7, 5))
 bars = plt.bar(metrics, scores)
 plt.ylim(0, 1)
 plt.ylabel("Score")
-plt.title("Bar Graph of Model Performance Metrics")
+plt.title(f"Bar Graph of Model Performance — {STUDENT_NAME}")
 
 for bar in bars:
     height = bar.get_height()
-    plt.text(bar.get_x() + bar.get_width()/2, height + 0.02,
-             f"{height:.2f}", ha="center", fontsize=10)
+    plt.text(bar.get_x() + bar.get_width()/2,
+             height + 0.02,
+             f"{height:.2f}",
+             ha="center")
 
-plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
 # -------------------------------
@@ -201,9 +195,8 @@ plt.figure(figsize=(8, 5))
 plt.plot(range(1, 21), error_rates, marker="o")
 plt.xlabel("K Value")
 plt.ylabel("Error Rate")
-plt.title("Elbow Method for Optimal K")
+plt.title(f"Elbow Method for Optimal K — {STUDENT_NAME}")
 plt.grid(True)
-plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
 best_k = error_rates.index(min(error_rates)) + 1
