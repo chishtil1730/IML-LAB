@@ -168,8 +168,26 @@ plt.title("Model Performance Radar Plot")
 plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
+# 8️⃣ Bar Graph (Performance Metrics) ✅ NEW
+metrics = ["Accuracy", "Precision", "Recall", "F1-score"]
+scores = [accuracy, precision, recall, f1]
+
+plt.figure(figsize=(7, 5))
+bars = plt.bar(metrics, scores)
+plt.ylim(0, 1)
+plt.ylabel("Score")
+plt.title("Bar Graph of Model Performance Metrics")
+
+for bar in bars:
+    height = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, height + 0.02,
+             f"{height:.2f}", ha="center", fontsize=10)
+
+plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
+plt.show()
+
 # -------------------------------
-# 8. Elbow Method
+# 9. Elbow Method
 # -------------------------------
 error_rates = []
 
