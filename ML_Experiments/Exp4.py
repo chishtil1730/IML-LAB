@@ -22,6 +22,8 @@ from sklearn.metrics import (
     auc
 )
 
+STUDENT_TAG = "24BCA7027 SHAIK BARAKH CHISHTI"
+
 # -------------------------------
 # 1. Load Dataset
 # -------------------------------
@@ -88,40 +90,53 @@ print("\nConfusion Matrix:\n", cm)
 # VISUALIZATION SECTION
 # ===============================
 
-# 1️⃣ Box Plot (Input Features)
+# 1️⃣ Box Plot
 plt.figure(figsize=(12, 6))
 df.drop("Outcome", axis=1).boxplot()
 plt.title("Box Plot of Input Features")
 plt.xticks(rotation=45)
 plt.grid(True)
+plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
-# 2️⃣ Hexbin Plot (Glucose vs BMI)
+# 2️⃣ Violin Plot
+plt.figure(figsize=(7, 5))
+sns.violinplot(x="Outcome", y="BMI", data=df, inner="quartile")
+plt.title("Violin Plot: BMI vs Outcome")
+plt.xlabel("Outcome")
+plt.ylabel("BMI")
+plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
+plt.show()
+
+# 3️⃣ Hexbin Plot
 plt.figure(figsize=(6, 5))
 plt.hexbin(df["Glucose"], df["BMI"], gridsize=30, cmap="Blues")
 plt.colorbar(label="Density")
 plt.xlabel("Glucose")
 plt.ylabel("BMI")
 plt.title("Hexbin Plot: Glucose vs BMI")
+plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
-# 3️⃣ Raincloud Plot (Outcome vs Glucose)
+# 4️⃣ Raincloud Plot
 plt.figure(figsize=(7, 5))
 sns.violinplot(x="Outcome", y="Glucose", data=df, inner=None, color="lightgray")
 sns.boxplot(x="Outcome", y="Glucose", data=df, width=0.2)
 sns.stripplot(x="Outcome", y="Glucose", data=df, color="black", alpha=0.4)
 plt.title("Raincloud Plot: Glucose vs Outcome")
+plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
-# 4️⃣ Confusion Matrix Heatmap
+# 5️⃣ Confusion Matrix
 plt.figure(figsize=(5, 4))
 sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Confusion Matrix")
+plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
-# 5️⃣ ROC Curve
+# 6️⃣ ROC Curve
 fpr, tpr, _ = roc_curve(y_test, y_prob)
 roc_auc = auc(fpr, tpr)
 
@@ -133,9 +148,10 @@ plt.ylabel("True Positive Rate")
 plt.title("ROC Curve")
 plt.legend()
 plt.grid(True)
+plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
-# 6️⃣ Radar Plot (Metrics Summary)
+# 7️⃣ Radar Plot
 labels = ["Accuracy", "Precision", "Recall", "F1-score"]
 values = [accuracy, precision, recall, f1]
 values += values[:1]
@@ -149,10 +165,11 @@ ax.plot(angles, values)
 ax.fill(angles, values, alpha=0.25)
 ax.set_thetagrids(np.degrees(angles[:-1]), labels)
 plt.title("Model Performance Radar Plot")
+plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
 # -------------------------------
-# 8. Elbow Method for Best K
+# 8. Elbow Method
 # -------------------------------
 error_rates = []
 
@@ -168,6 +185,7 @@ plt.xlabel("K Value")
 plt.ylabel("Error Rate")
 plt.title("Elbow Method for Optimal K")
 plt.grid(True)
+plt.figtext(0.5, 0.01, STUDENT_TAG, ha="center", fontsize=10, alpha=0.7)
 plt.show()
 
 best_k = error_rates.index(min(error_rates)) + 1
