@@ -1,5 +1,5 @@
 import pandas as pd
-df = pd.read_csv("../ML_Experiments/EnterpriseSurvey.csv")
+df = pd.read_csv("../ML_Experiments/data_sets/EnterpriseSurvey.csv")
 numeric_cols = df.select_dtypes(include='number').columns
 df_norm = df.copy()
 for col in numeric_cols:

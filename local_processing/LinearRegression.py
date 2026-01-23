@@ -56,7 +56,7 @@ def predict(X, theta, y_mean, y_std):
     return preds * y_std + y_mean
 
 if __name__ == "__main__":
-    X, y = load_csv("../ML_Experiments/data_lab2.csv")
+    X, y = load_csv("../ML_Experiments/data_sets/data_lab2.csv")
     X = normalize(X)
     y_scaled, y_mean, y_std = normalize_y(y)
     theta = gradient_descent(X, y_scaled)

@@ -1,7 +1,7 @@
 import pandas as pd
 
 # 1. Load the dataset
-df = pd.read_csv('../framingham - framingham.csv')
+df = pd.read_csv('../data_sets/framingham - framingham.csv')
 
 # 2. Identify columns with missing values (NaN or "NA")
 # pandas automatically treats "NA" in CSVs as NaN if not specified otherwise
