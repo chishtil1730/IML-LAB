@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, r
 from sklearn.preprocessing import StandardScaler
 
 # 1. Load the dataset
-df = pd.read_csv('framingham_cleaned.csv')
+df = pd.read_csv('../framingham_cleaned.csv')
 
 # 2. Data Preprocessing
 df = df.dropna()

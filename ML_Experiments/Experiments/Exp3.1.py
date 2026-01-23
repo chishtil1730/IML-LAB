@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 
 # 1. Load the dataset
 # Replace 'your_file.csv' with the actual path to your file
-df = pd.read_csv('framingham_cleaned.csv')
+df = pd.read_csv('../framingham_cleaned.csv')
 
 # 2. Data Preprocessing
 # Handling missing values (common in health datasets)

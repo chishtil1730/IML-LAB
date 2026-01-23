@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # 1. Load and prepare data
-df = pd.read_csv('data_lab2.csv')
+df = pd.read_csv('../data_lab2.csv')
 y = df['y'].values.reshape(-1, 1)
 X = df[['x1', 'x2', 'x3']].values
 X = (X - X.mean(axis=0)) / X.std(axis=0)

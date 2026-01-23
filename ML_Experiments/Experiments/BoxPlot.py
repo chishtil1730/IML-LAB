@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-df = pd.read_csv("EnterpriseSurvey.csv")
+df = pd.read_csv("../EnterpriseSurvey.csv")
 df.columns = df.columns.str.strip()
 numeric_cols = ['year', 'value']
 df['value'] = pd.to_numeric(df['value'], errors='coerce')

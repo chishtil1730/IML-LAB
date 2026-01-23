@@ -1,5 +1,5 @@
 import pandas as pd
-df = pd.read_csv("EnterpriseSurvey.csv")
+df = pd.read_csv("../EnterpriseSurvey.csv")
 df.columns = df.columns.str.strip()
 col = 'value'
 if col in df.columns:

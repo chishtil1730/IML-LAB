@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-df = pd.read_csv('data_lab2.csv')
+df = pd.read_csv('../data_lab2.csv')
 y = df['y'].values
 X = df[['x1', 'x2', 'x3']].values
 X_b = np.c_[np.ones((len(X), 1)), X]  # Add bias term (x0 = 1)
