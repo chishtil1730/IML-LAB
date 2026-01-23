@@ -27,7 +27,7 @@ STUDENT_NAME = "24BCA7027 SHAIK BARAKH CHISHTI"
 # -------------------------------
 # 1. Load Dataset
 # -------------------------------
-df = pd.read_excel("ML_Experiments/diabetes.xlsx")
+df = pd.read_excel("ML_Experiments/data_sets/diabetes.xlsx")
 
 print("\nDataset Preview:")
 print(df.head())
