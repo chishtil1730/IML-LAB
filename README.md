@@ -33,6 +33,7 @@ This repository contains:
 * ✔️ Machine Learning experiments written in Python
 * ✔️ Useful scripts for file handling, image processing, and automation
 * ✔️ Notion documentation covering database design, ER diagrams, and references
+* ✔️ ️Engineering Applied Statistics formuale
 
 Whether you're revising ML fundamentals or looking for practical Python utilities, this repo is designed to be simple, readable, and reusable.
 
