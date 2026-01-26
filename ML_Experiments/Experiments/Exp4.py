@@ -22,7 +22,7 @@ from sklearn.metrics import (
     auc
 )
 
-STUDENT_NAME = "24BCA7027 SHAIK BARAKH CHISHTI"
+STUDENT_NAME = "24BCA7027 SHAIK-BARAKH-CHISHTI"
 
 # -------------------------------
 # 1. Load Dataset
