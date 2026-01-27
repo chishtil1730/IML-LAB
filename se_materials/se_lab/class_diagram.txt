@@ -1,0 +1,60 @@
+@startuml
+
+class User {
+  +userId: int
+  +name: String
+  +email: String
+  +password: String
+  +role: String
+  +login()
+  +logout()
+}
+
+class Student {
+  +institutionId: String
+}
+
+class JuniorStudent {
+  +browseResources()
+  +downloadResource()
+}
+
+class SeniorStudent {
+  +uploadResource()
+  +editResource()
+  +deleteResource()
+}
+
+class Admin {
+  +approveResource()
+  +rejectResource()
+  +manageUsers()
+}
+
+class Resource {
+  +resourceId: int
+  +title: String
+  +subject: String
+  +semester: int
+  +year: int
+  +filePath: String
+  +status: String
+  +downloadCount: int
+  +uploadDate: Date
+}
+
+class ResourceMetadata {
+  +tags: String
+  +description: String
+}
+
+User <|-- Student
+Student <|-- JuniorStudent
+Student <|-- SeniorStudent
+User <|-- Admin
+
+SeniorStudent "1" -- "many" Resource : uploads
+Admin "1" -- "many" Resource : moderates
+Resource "1" -- "1" ResourceMetadata : has
+
+@enduml
