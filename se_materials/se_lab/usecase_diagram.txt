@@ -4,9 +4,11 @@ left to right direction
 actor "Junior Student" as JS
 actor "Senior Student" as SS
 actor "Admin" as A
-
+//Added a rectangle named "ScholarSpace Study Resource Manager"
 rectangle "ScholarSpace Study Resource Manager" {
 
+
+//Adding links to actors
   JS -- (Register)
   JS -- (Login)
   JS -- (Logout)
