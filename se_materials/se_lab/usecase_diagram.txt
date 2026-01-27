@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+
+actor "Junior Student" as JS
+actor "Senior Student" as SS
+actor "Admin" as A
+
+rectangle "ScholarSpace Study Resource Manager" {
+
+  JS -- (Register)
+  JS -- (Login)
+  JS -- (Logout)
+  JS -- (Browse Resources)
+  JS -- (Search Resources)
+  JS -- (Download Resource)
+
+  SS -- (Register)
+  SS -- (Login)
+  SS -- (Logout)
+  SS -- (Upload Resource)
+  SS -- (Edit/Delete Resource)
+  SS -- (View Upload Status)
+
+  A -- (Login)
+  A -- (Approve Resource)
+  A -- (Reject Resource)
+  A -- (Manage Users)
+  A -- (View Pending Resources)
+}
+
+@enduml
