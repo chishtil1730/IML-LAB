@@ -1,5 +1,6 @@
 @startuml
 
+//Creating classes with attributes & methods
 class User {
   +userId: int
   +name: String
@@ -48,11 +49,13 @@ class ResourceMetadata {
   +description: String
 }
 
+//Adding inheritance arrows
 User <|-- Student
 Student <|-- JuniorStudent
 Student <|-- SeniorStudent
 User <|-- Admin
 
+//Mentioning type of relationship and also giving it name
 SeniorStudent "1" -- "many" Resource : uploads
 Admin "1" -- "many" Resource : moderates
 Resource "1" -- "1" ResourceMetadata : has
