@@ -1,6 +1,27 @@
- # PriorityML – Design & Architecture Draft
+# PriorityML – Design & Architecture Draft
 
-## Motivation
+## Functional Capabilities (High-Level)
+
+* Accepts structured datasets via pluggable adapters (tabular initially; extensible to audio, time-series, and text)
+* Analyzes statistical relationships and dependencies between features
+* Computes structural feature relevance using reconstruction-based self-supervision
+* Ranks and groups features into priority tiers based on reconstruction error, stability, and redundancy metrics
+* Performs bounded recursive masking and reconstruction of feature values with configurable iteration limits
+* Measures reconstruction error and discrepancy using configurable, model-agnostic metrics
+* Iteratively refines feature representations until configurable convergence or budget criteria are met
+* Supports curriculum-style feature introduction based on computed feature priority tiers
+* Supports freezing and controlled fine-tuning of internally learned representations during staged training
+* Identifies potentially noisy, redundant, or destabilizing features using reconstruction and stability signals
+* Computes normalized per-feature reliability scores derived from reconstruction behavior
+* Optionally computes per-sample reliability scores with configurable sampling and memory constraints
+* Reconstructs metric-optimized dataset variants (tiered, weighted, or staged) based on computed reliability and priority signals
+* Generates dataset-level structural health and quality metrics derived from reconstruction and stability analysis
+* Outputs a normalized Dataset Health Score for comparative assessment of dataset robustness
+* Provides model-agnostic outputs compatible with standard downstream ML workflows
+* Exposes results programmatically for use in notebooks, scripts, and backends
+* Can be embedded as a backend engine for analytics and web applications
+
+## IDEA
 
 Modern machine learning performance is often limited not by model architecture, but by **data quality, structure, and feature relevance**. Treating datasets as flat, unordered inputs places unnecessary burden on models and reduces interpretability.
 
@@ -15,7 +36,7 @@ The goal is to improve **accuracy, robustness, interpretability**, and sometimes
 
 ---
 
-## Core Belief
+## Belief
 
 > ML models can achieve better efficiency and generalization when training data is explicitly structured, prioritized, and validated instead of being treated as flat input.
 
