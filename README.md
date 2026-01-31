@@ -11,6 +11,8 @@ This repository acts as both a learning playground and a toolbox: from ML experi
 
 ```
 📦 IML-LAB
+ ┣ 📂 custom_library
+ ┃   └─ ⚙️ Building custom python library (will have it's own repo soon)
  ┣ 📂 ML_Experiments
  ┃   └─ 🧠 Machine learning experiments, models & evaluations
  ┣ 📂 images_hand_written
@@ -21,6 +23,8 @@ This repository acts as both a learning playground and a toolbox: from ML experi
  ┃   └─ 📐 Math & engineering-related Python programs
  ┣ 📂 notion_doc
  ┃   └─ 📚 Notion database docs, ER diagrams & references
+ ┣ 📂 Software Engineering
+ ┃   └─ 👨‍🔬 Basics of Software Engineering
  ┗ 📄 README.md
 ```
 
