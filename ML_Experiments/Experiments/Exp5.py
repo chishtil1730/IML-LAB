@@ -100,6 +100,35 @@ print("\nConfusion Matrix:\n", cm)
 # VISUALIZATION SECTION
 # ===============================
 
+
+# -------------------------------
+# Box Plot
+# -------------------------------
+plt.figure(figsize=(10, 6))
+df.drop("PlayTennis", axis=1).boxplot()
+plt.title(f"Box Plot of Weather Features — {STUDENT_NAME}")
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.show()
+
+# -------------------------------
+# Correlation Heatmap
+# -------------------------------
+plt.figure(figsize=(8, 6))
+correlation_matrix = df.corr()
+
+sns.heatmap(
+    correlation_matrix,
+    annot=True,
+    cmap="coolwarm",
+    fmt=".2f",
+    linewidths=0.5
+)
+
+plt.title(f"Feature Correlation Heatmap — {STUDENT_NAME}")
+plt.show()
+
+
 # 1️⃣ Confusion Matrix Heatmap
 plt.figure(figsize=(5, 4))
 sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
