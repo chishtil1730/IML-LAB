@@ -58,7 +58,7 @@ rmse = np.mean(rmses)
 r2 = np.mean(r2s)
 
 # Display Results (Using requested template)
-STUDENT_NAME = "[Your Name]"  # Please replace with your actual name
+STUDENT_NAME = "24BCA7027 SHAIK-BARAKH-CHISHTI"  # Please replace with your actual name
 print(f"\nID3 RESULTS (4-Fold CV) — {STUDENT_NAME}")
 print(f"Accuracy:  {accuracy:.4f}")
 print(f"Precision: {precision:.4f}")
@@ -79,7 +79,7 @@ plt.savefig('violin_plot.png')
 # 2. Boxplot
 plt.figure(figsize=(10, 6))
 sns.boxplot(x='loan_default', y='annual_income', data=df, palette='Set2')
-plt.title('fBoxplot: Annual Income vs Loan Default-{STUDENT_NAME}')
+plt.title(f'Boxplot: Annual Income vs Loan Default-{STUDENT_NAME}')
 plt.savefig('boxplot.png')
 
 # 3. Hexbin Plot
