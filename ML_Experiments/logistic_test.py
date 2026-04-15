@@ -17,20 +17,20 @@ def sigmoid(x):
     return 1/(1+math.exp(-x))
 
 def train(train ,lr =0.01, iterations=100):
-    no_of_featues = len(train[0])-1
-    weights = [0.0]*no_of_featues
+    no_of_features = len(train[0])-1
+    weights = [0.0]*no_of_features
     bias = 0.0
 
     for _ in range(iterations):
         for row in train:
-            z = sum(weights[i]*row[i] for i in range(no_of_featues)) + bias
+            z = sum(weights[i]*row[i] for i in range(no_of_features)) + bias
             prediction  = sigmoid(z)
 
             actual = row[-1]
 
             error = prediction-actual
 
-            for i in range(no_of_featues):
+            for i in range(no_of_features):
                 weights[i] -= lr*error*row[i]
             bias -= error*lr
 
