@@ -2,7 +2,7 @@
 
 Welcome to **IML-LAB** — a curated collection of machine learning experiments, practical Python utilities, and daily-driver scripts developed during lab work.
 
-This repository acts as both a learning playground and a toolbox: from ML experiments to small scripts that make everyday tasks easier.
+This repository is for me to both experiment and work on stuff: from ML experiments to small scripts that make everyday tasks easier.
 
 ---
 
