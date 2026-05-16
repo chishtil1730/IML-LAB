@@ -1,4 +1,7 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
 
 # 1. PREPROCESSING
 df = pd.read_csv('data_sets/framingham - framingham.csv')
@@ -30,8 +33,29 @@ def predict(row):
         return mode_non_smoker
 
 # 4. EVALUATION
+threshold =100
 actual = [r[-1] for r in test]
 preds = [predict(r) for r in test]
+
+for i in range(len(actual)):
+    if actual[i]<threshold:
+        actual[i] = 0
+    else:
+        actual[i]=1
+
+for i in range(len(preds)):
+    if preds[i]<threshold:
+        preds[i] = 0
+    else:
+        preds[i]=1
+
+cm = confusion_matrix(actual,preds)
+
+plt.figure(figsize=(6,9))
+
+sns.heatmap(cm, annot=True, fmt='d', cmap='Purples')
+
+plt.show()
 
 correct = sum(1 for a, p in zip(actual, preds) if a == p)
 print(f"Simplest Tree Accuracy: {correct/len(actual):.2%}")
